@@ -80,7 +80,7 @@ const actualizarTarea = async (req, res) =>{
 
     try {
         await tarea.save()
-        const tareaRespuesta = await Tarea.findById(id).populate('completado') 
+        const tareaRespuesta = await Tarea.findById(id).populate('completado').populate('proyecto')
         res.json(tareaRespuesta)
     } catch (error) {
         console.log(error)
