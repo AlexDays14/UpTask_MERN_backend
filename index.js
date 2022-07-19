@@ -71,7 +71,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('eliminar tarea', tarea =>{
-        const proyecto = tarea.proyecto
+        const proyecto = tarea?.proyecto?._id ? tarea?.proyecto?._id : tarea?.proyecto
         socket.to(proyecto).emit('tarea eliminada', tarea)
     })
 
