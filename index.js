@@ -16,10 +16,10 @@ conectarDB();
 // Configurar CORS
 const whitelist = [
     process.env.FRONTEND_URL,
-    process.env.FRONTEND_LOCAL_URL,
+    /* process.env.FRONTEND_LOCAL_URL,
     process.env.THIS_URL,
     process.env.LOCALHOST_URL,
-    process.env.IPHONE
+    process.env.IPHONE */
 ]
 
 const corsOptions = {
@@ -53,7 +53,7 @@ import { Server } from 'socket.io'
 const io = new Server(servidor, {
     pingTimeout: 60000,
     cors: {
-        origin: [process.env.FRONTEND_LOCAL_URL, process.env.FRONTEND_URL]
+        origin: [/* process.env.FRONTEND_LOCAL_URL, */ process.env.FRONTEND_URL]
     }
 })
 
